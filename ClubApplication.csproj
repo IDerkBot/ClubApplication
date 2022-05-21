@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,6 +43,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.6.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.2.0.6\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.5.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.4.5.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -64,81 +75,87 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Entity\Child.cs">
+    <Compile Include="Models\Entity\Child.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Club.cs">
+    <Compile Include="Models\Entity\Club.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\database.Context.cs">
+    <Compile Include="Models\Entity\database.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>database.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\database.cs">
+    <Compile Include="Models\Entity\database.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\database.Designer.cs">
+    <Compile Include="Models\Entity\database.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>database.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Parent.cs">
+    <Compile Include="Models\Entity\Parent.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\sysdiagram.cs">
+    <Compile Include="Models\Entity\sysdiagram.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Teacher.cs">
+    <Compile Include="Models\Entity\Teacher.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\User.cs">
+    <Compile Include="Models\Entity\User.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Data.cs" />
-    <Compile Include="Models\Manager.cs" />
-    <Compile Include="Views\AuthPage.xaml.cs">
+    <Compile Include="Models\PageManager.cs" />
+    <Compile Include="Views\Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChildrensPage.xaml.cs">
-      <DependentUpon>ChildrensPage.xaml</DependentUpon>
+    <Compile Include="Views\Pages\ChildrenPage.xaml.cs">
+      <DependentUpon>ChildrenPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClubsPage.xaml.cs">
+    <Compile Include="Views\Pages\ClubsPage.xaml.cs">
       <DependentUpon>ClubsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Edit\ChildrenEditPage.xaml.cs">
+    <Compile Include="Views\Pages\Edit\ChildrenEditPage.xaml.cs">
       <DependentUpon>ChildrenEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Edit\ClubEditPage.xaml.cs">
+    <Compile Include="Views\Pages\Edit\ClubEditPage.xaml.cs">
       <DependentUpon>ClubEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Edit\ParentEditPage.xaml.cs">
+    <Compile Include="Views\Pages\Edit\ParentEditPage.xaml.cs">
       <DependentUpon>ParentEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Edit\TeacherEditPage.xaml.cs">
+    <Compile Include="Views\Pages\Edit\TeacherEditPage.xaml.cs">
       <DependentUpon>TeacherEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Edit\UserEditPage.xaml.cs">
+    <Compile Include="Views\Pages\Edit\UserEditPage.xaml.cs">
       <DependentUpon>UserEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuPage.xaml.cs">
+    <Compile Include="Views\Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Parents.xaml.cs">
-      <DependentUpon>Parents.xaml</DependentUpon>
+    <Compile Include="Views\Pages\ParentsPage.xaml.cs">
+      <DependentUpon>ParentsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegPage.xaml.cs">
+    <Compile Include="Views\Pages\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TeachersPage.xaml.cs">
+    <Compile Include="Views\Pages\TeachersPage.xaml.cs">
       <DependentUpon>TeachersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UsersPage.xaml.cs">
+    <Compile Include="Views\Pages\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Views\Windows\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SendWindows.xaml.cs">
+      <DependentUpon>SendWindows.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -146,59 +163,67 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AuthPage.xaml">
+    <Page Include="Views\Pages\AuthPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ChildrensPage.xaml">
+    <Page Include="Views\Pages\ChildrenPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ClubsPage.xaml">
+    <Page Include="Views\Pages\ClubsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Edit\ChildrenEditPage.xaml">
+    <Page Include="Views\Pages\Edit\ChildrenEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Edit\ClubEditPage.xaml">
+    <Page Include="Views\Pages\Edit\ClubEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Edit\ParentEditPage.xaml">
+    <Page Include="Views\Pages\Edit\ParentEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Edit\TeacherEditPage.xaml">
+    <Page Include="Views\Pages\Edit\TeacherEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Edit\UserEditPage.xaml">
+    <Page Include="Views\Pages\Edit\UserEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MenuPage.xaml">
+    <Page Include="Views\Pages\MenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Parents.xaml">
+    <Page Include="Views\Pages\ParentsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RegPage.xaml">
+    <Page Include="Views\Pages\RegPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TeachersPage.xaml">
+    <Page Include="Views\Pages\TeachersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UsersPage.xaml">
+    <Page Include="Views\Pages\UsersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\SendWindows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,11 +246,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Entity\database.edmx">
+    <EntityDeploy Include="Models\Entity\database.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>database.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entity\database.edmx.diagram">
+    <None Include="Models\Entity\database.edmx.diagram">
       <DependentUpon>database.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -239,12 +264,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Entity\database.Context.tt">
+    <Content Include="Models\Entity\database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>database.Context.cs</LastGenOutput>
       <DependentUpon>database.edmx</DependentUpon>
     </Content>
-    <Content Include="Entity\database.tt">
+    <Content Include="Models\Entity\database.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>database.edmx</DependentUpon>
       <LastGenOutput>database.cs</LastGenOutput>
@@ -254,4 +279,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
 </Project>
